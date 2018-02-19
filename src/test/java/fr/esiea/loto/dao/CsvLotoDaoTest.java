@@ -16,7 +16,7 @@ public class CsvLotoDaoTest {
 
 	@Before
 	public void doBefore() {
-		dao = new CsvLotoDao("src/main/resources/euromillion.csv");
+		dao = new CsvLotoDao("src/test/resources/euromillion.csv");
 	}
 
 	@Test
