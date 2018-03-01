@@ -2,10 +2,13 @@ package fr.esiea.loto;
 
 import java.util.List;
 
+import javax.swing.JFrame;
+
 import org.apache.log4j.Logger;
 
 import fr.esiea.loto.dao.CsvLotoDao;
 import fr.esiea.loto.domain.Loto;
+import fr.esiea.loto.graphic.LotoJFrame;
 
 
 
@@ -25,7 +28,8 @@ public class Launcher {
 		log.debug(draw.getNumberOfDraw());
 	}
 	
-	
+	final JFrame lotoJFrame = new LotoJFrame();
+	lotoJFrame.setVisible(true);
 	
 	
 	}
