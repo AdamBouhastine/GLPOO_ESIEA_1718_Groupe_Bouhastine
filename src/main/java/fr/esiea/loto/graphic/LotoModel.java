@@ -2,12 +2,14 @@ package fr.esiea.loto.graphic;
 
 import java.util.List;
 
+
 import javax.swing.table.AbstractTableModel;
 
 import fr.esiea.loto.dao.CsvLotoDao;
 import fr.esiea.loto.domain.Day;
 import fr.esiea.loto.domain.Loto;
 import org.apache.log4j.Logger;
+
 
 public class LotoModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
@@ -17,6 +19,7 @@ public class LotoModel extends AbstractTableModel {
 	
 	public void ajouterChien(final Loto tirage) {
 		log.debug("ajouterTirage");}
+
 
 	public LotoModel() {
 		headers = new String[] { "Year", "Day", "Date", "Number of Draw", "Balls", "Stars" };
