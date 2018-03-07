@@ -3,8 +3,12 @@ package fr.esiea.loto.graphic;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
 
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
@@ -43,10 +47,26 @@ public class LotoJFrame extends JFrame{
 		final JScrollPane scroll = new JScrollPane(table);
 		getContentPane().add(scroll, BorderLayout.CENTER);
 		
+		final JPanel boutons = new JPanel();
+        boutons.add(new JButton(new AjouterLigneAction()));
+        getContentPane().add(boutons, BorderLayout.SOUTH);
 		
 		pack();
 	}
 	
+	private class AjouterLigneAction extends AbstractAction {
+
+        private AjouterLigneAction() {
+            super("Ajouter");
+        }
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			log.debug("Click sur le bouton ajouter");
+			
+		}
+	}
+}
 	
 
-}
+
