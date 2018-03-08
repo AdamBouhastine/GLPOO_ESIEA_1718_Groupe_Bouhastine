@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -17,6 +18,8 @@ import javax.swing.table.TableRowSorter;
 import org.apache.log4j.Logger;
 
 import fr.esiea.loto.domain.Day;
+import fr.esiea.loto.domain.Loto;
+import fr.esiea.loto.domain.LotoDraw;
 
 public class LotoJFrame extends JFrame{
 	
@@ -50,22 +53,53 @@ public class LotoJFrame extends JFrame{
 		final JPanel boutons = new JPanel();
         boutons.add(new JButton(new AjouterLigneAction()));
         getContentPane().add(boutons, BorderLayout.SOUTH);
+        
+        
+        boutons.add(new JButton(new SupprimerLigneAction()));
+        getContentPane().add(boutons, BorderLayout.SOUTH);
 		
 		pack();
 	}
 	
 	private class AjouterLigneAction extends AbstractAction {
+		
 
-        private AjouterLigneAction() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		private AjouterLigneAction() {
             super("Ajouter");
         }
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			log.debug("Click sur le bouton ajouter");
+			final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null, null);
+            model.ajouterloto(toto);
 			
 		}
+		
+		
 	}
+	
+	 private class SupprimerLigneAction extends AbstractAction {
+
+	        private static final long serialVersionUID = -5556554884674073716L;
+
+	        private SupprimerLigneAction() {
+	            super("Supprimer");
+	        }
+
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            final int[] selection = table.getSelectedRows();
+	            for (int i = selection.length - 1; i >= 0; i--) {
+	                model.supprimerloto(selection[i]);
+	            }
+	        }
+	    }
 }
 	
 

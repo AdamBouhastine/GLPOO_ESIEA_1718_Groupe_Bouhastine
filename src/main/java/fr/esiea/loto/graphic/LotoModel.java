@@ -10,25 +10,19 @@ import fr.esiea.loto.domain.Loto;
 import org.apache.log4j.Logger;
 
 public class LotoModel extends AbstractTableModel {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID =  -139320534128196933L;;
 	private final String[] headers;
-	private List<Loto> draws;
+	private static List<Loto> draws;
 	private static final Logger log = Logger.getLogger(LotoModel.class);
 	
-	public void ajouterChien(final Loto tirage) {
-		log.debug("ajouterTirage");}
+	
 
 	public LotoModel() {
+		super();
 		headers = new String[] { "Year", "Day", "Date", "Number of Draw", "Balls", "Stars" };
 		draws = CreateDraws();
 	}
-
-	private List<Loto> CreateDraws() {
-		final CsvLotoDao csvLotoDao = new CsvLotoDao("src/main/resources/euromillion.csv");
-		final List<Loto> csvDraw = csvLotoDao.findAllDraws();
-		return csvDraw;
-	}
-
+	
 	@Override
 	public int getColumnCount() {
 		return headers.length;
@@ -37,6 +31,11 @@ public class LotoModel extends AbstractTableModel {
 	@Override
 	public int getRowCount() {
 		return draws.size();
+	}
+	
+	@Override
+	public String getColumnName(int column) {
+		return headers[column];
 	}
 
 	@Override
@@ -59,12 +58,7 @@ public class LotoModel extends AbstractTableModel {
 			throw new IllegalArgumentException("Error");
 		}
 	}
-
-	@Override
-	public String getColumnName(int column) {
-		return headers[column];
-	}
-
+	
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
 		switch (columnIndex) {
@@ -80,4 +74,33 @@ public class LotoModel extends AbstractTableModel {
 			return Object.class;
 		}
 	}
+
+	
+	private List<Loto> CreateDraws() {
+		final CsvLotoDao csvLotoDao = new CsvLotoDao("src/main/resources/euromillion.csv");
+		final List<Loto> csvDraw = csvLotoDao.findAllDraws();
+		return csvDraw;
+	}
+
+	
+
+	
+
+	
+	
+	public void ajouterloto(final Loto tirage) {
+		log.debug("ajouterTirage");
+        draws.add(tirage);
+
+        final int position = draws.size() - 1;
+        fireTableRowsInserted(position, position); 
+		
+	}
+	
+	public void supprimerloto(final int rowIndex) {
+        log.debug("supprimerTirage");
+
+        draws.remove(rowIndex);
+        fireTableRowsDeleted(rowIndex, rowIndex);
+    }
 }
