@@ -30,9 +30,15 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+
+import org.jfree.data.general.DefaultPieDataset;
+
 import fr.esiea.loto.domain.Day;
 
 import fr.esiea.loto.domain.Loto;
+
+import fr.esiea.loto.domain.LotoDraw;
+
 import java.util.Comparator;
 import java.util.HashMap;
 
@@ -44,6 +50,7 @@ public class LotoJFrame extends JFrame {
 	private JTable table;
 	Map<String, Integer> map = new HashMap<String, Integer>();
 	private JDialog balljdialog;
+
 	private JMenuItem menuSupprimer;
 
 	public static long dateAsComparingLong(Object date) {
@@ -62,38 +69,38 @@ public class LotoJFrame extends JFrame {
 		model = new LotoModel();
 
 		table = new JTable(model);
-		
+
 		AddMenu();
 		AddTable();
 		pack();
 
 	}
-	
-	
+
 	public void AddMenu() {
-		 final JMenuBar menuBar = new JMenuBar();
-		
-		 // Menu Edition
-	        final JMenu menuEdition = new JMenu("Edition");
-	        menuBar.add(menuEdition);
-	        final JMenuItem menuAjouter = new JMenuItem(new AjouterLigneAction());
-	        menuEdition.add(menuAjouter);  
-	        menuSupprimer = new JMenuItem(new SupprimerLigneAction());
-	        menuEdition.add(menuSupprimer);
-	        activerOuDesactiverMenuEdition();
-	        
-	     // Menu Graphe
-	        final JMenu menuGraphe = new JMenu("Grahes");
-	        menuBar.add(menuGraphe);
-	        final JMenuItem menuBallsNumber = new JMenuItem(new Graphe());
-	        menuGraphe.add(menuBallsNumber);
-	        
-	        // Ajout a la fenetre
-	        setJMenuBar(menuBar);
-		 
-		 
+		final JMenuBar menuBar = new JMenuBar();
+
+		// Menu Edition
+		final JMenu menuEdition = new JMenu("Edition");
+		menuBar.add(menuEdition);
+		final JMenuItem menuAjouter = new JMenuItem(new AjouterLigneAction());
+		menuEdition.add(menuAjouter);
+		menuSupprimer = new JMenuItem(new SupprimerLigneAction());
+		menuEdition.add(menuSupprimer);
+		activerOuDesactiverMenuEdition();
+
+		// Menu Graphe
+		final JMenu menuGraphe = new JMenu("Grahes");
+		menuBar.add(menuGraphe);
+		final JMenuItem menuBallsNumber = new JMenuItem(new Graphe());
+		menuGraphe.add(menuBallsNumber);
+
+		// Ajout a la fenetre
+		setJMenuBar(menuBar);
+
 	}
+
 	public void AddTable() {
+
 		final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(table.getModel());
 		sorter.setComparator(0, Comparator.comparing(String::valueOf));
 		sorter.setComparator(2, Comparator.comparingLong(LotoJFrame::dateAsComparingLong));
@@ -106,11 +113,13 @@ public class LotoJFrame extends JFrame {
 
 		final JScrollPane scroll = new JScrollPane(table);
 		getContentPane().add(scroll, BorderLayout.CENTER);
-		
-		 // Ajout d'un ecouteur
-        final ListSelectionModel listSelectionModel = table.getSelectionModel();
-        listSelectionModel.addListSelectionListener(new TableauListSelectionListener());
 
+		// Ajout d'un ecouteur
+		final ListSelectionModel listSelectionModel = table.getSelectionModel();
+		listSelectionModel.addListSelectionListener(new TableauListSelectionListener());
+
+
+		pack();
 
 	}
 
@@ -129,16 +138,25 @@ public class LotoJFrame extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 
 			log.debug("Click sur le bouton ajouter");
-			
-			/*final AddLotoActionHandler handler =  new AddLotoActionHandler(model);
-			AddLotoJDialog popup = new AddLotoJDialog(handler);
-			
-			popup.setvisible(true);*/
 
-			/*final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null, null);
+			/*
+			 * final AddLotoActionHandler handler = new AddLotoActionHandler(model);
+			 * AddLotoJDialog popup = new AddLotoJDialog(handler);
+			 * 
+			 * popup.setvisible(true);
+			 */
+
+			/*
+			 * final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null,
+			 * null); model.ajouterloto(toto);
+			 * 
+			 * log.debug("Clique sur le bouton ajouter");
+			 */
+
+			final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null, null);
 			model.ajouterloto(toto);
 
-			log.debug("Clique sur le bouton ajouter");*/
+			log.debug("Clique sur le bouton ajouter");
 
 		}
 
@@ -166,6 +184,7 @@ public class LotoJFrame extends JFrame {
 		private static final long serialVersionUID = 1L;
 
 		private Graphe() {
+
 			super("NumberOfBalls");
 		}
 
@@ -174,15 +193,15 @@ public class LotoJFrame extends JFrame {
 			log.debug("clic clic");
 			String[] trancheNames = { "0-10", "11-20", "21-30", "31-40", "41-50" };
 			Map<String, Integer> map = new HashMap<String, Integer>();
-			 for(String trancheName:trancheNames) {
-	                map.put(trancheName, 0);
-	            }
+			for (String trancheName : trancheNames) {
+				map.put(trancheName, 0);
+			}
 			List<Integer> balls;
 			final List<Loto> loto = model.getLoto();
 			for (Loto tirage : loto) {
 				balls = tirage.getBalls();
 				for (int i = 0; i < 5; i++) {
-					
+
 					String tranche = null;
 					if (balls.get(i) <= 10) {
 						tranche = "0-10";
@@ -193,60 +212,58 @@ public class LotoJFrame extends JFrame {
 					if (balls.get(i) <= 30 && balls.get(i) > 20) {
 						tranche = "21-30";
 					}
-					if (balls.get(i) <= 40 && balls.get(i) > 30){
+					if (balls.get(i) <= 40 && balls.get(i) > 30) {
 						tranche = "31-40";
 					}
-					if (balls.get(i) > 40){
+					if (balls.get(i) > 40) {
 						tranche = "41-50";
 					}
-					
-				Integer value = map.get(tranche);
-				value++;
-				map.put(tranche,value);
+
+					Integer value = map.get(tranche);
+					value++;
+					map.put(tranche, value);
 				}
 			}
 			balljdialog = new JDialog();
 			balljdialog.setTitle("Balls gagnantes");
-			
-			 final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-	            for (String tranche : trancheNames) {
-	                final Integer nb = map.get(tranche);
-	                dataset.addValue(nb,"Balls",tranche);
-	            }
+			final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-	            final JFreeChart barChart = ChartFactory.createBarChart("Balls","Tranches","Nombre",/**/
-	                    dataset, PlotOrientation.VERTICAL, true, true, false);
+			for (String tranche : trancheNames) {
+				final Integer nb = map.get(tranche);
+				dataset.addValue(nb, "Balls", tranche);
+			}
 
-	            final ChartPanel cPanel = new ChartPanel(barChart);
+			final JFreeChart barChart = ChartFactory.createBarChart("Balls", "Tranches", "Nombre", /**/
+					dataset, PlotOrientation.VERTICAL, true, true, false);
 
-	            balljdialog.getContentPane().add(cPanel, CENTER);
+			final ChartPanel cPanel = new ChartPanel(barChart);
 
-	            balljdialog.pack();
-	            balljdialog.setVisible(true);
-	        }
-	    }
-	
+			balljdialog.getContentPane().add(cPanel, CENTER);
+
+			balljdialog.pack();
+			balljdialog.setVisible(true);
+		}
+	}
+
 	private class TableauListSelectionListener implements ListSelectionListener {
 
-	    @Override
-	    public void valueChanged(final ListSelectionEvent event) {
-	        if (event.getValueIsAdjusting()) {
-	            return;
-	        }
+		@Override
+		public void valueChanged(final ListSelectionEvent event) {
+			if (event.getValueIsAdjusting()) {
+				return;
+			}
 
-	        activerOuDesactiverMenuEdition();
-	    }
+			activerOuDesactiverMenuEdition();
+		}
 
-		
 	}
+
 	private void activerOuDesactiverMenuEdition() {
-        final int[] selection = table.getSelectedRows();
+		final int[] selection = table.getSelectedRows();
 
-       
-        final boolean isSelection = selection != null && selection.length != 0;
-        menuSupprimer.setEnabled(isSelection);
-	}
+		final boolean isSelection = selection != null && selection.length != 0;
+		menuSupprimer.setEnabled(isSelection);
 	}
 
-
+}
