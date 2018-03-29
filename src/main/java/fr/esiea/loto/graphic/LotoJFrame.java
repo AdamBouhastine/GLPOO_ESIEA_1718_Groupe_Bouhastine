@@ -9,13 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.swing.AbstractAction;
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
@@ -31,13 +29,12 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import org.jfree.data.general.DefaultPieDataset;
-
 import fr.esiea.loto.domain.Day;
 
 import fr.esiea.loto.domain.Loto;
 
 import fr.esiea.loto.domain.LotoDraw;
+import fr.esiea.loto.handler.AddDrawActionHandler;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -139,25 +136,20 @@ public class LotoJFrame extends JFrame {
 
 			log.debug("Click sur le bouton ajouter");
 
-			/*
-			 * final AddLotoActionHandler handler = new AddLotoActionHandler(model);
-			 * AddLotoJDialog popup = new AddLotoJDialog(handler);
-			 * 
-			 * popup.setvisible(true);
-			 */
+			
+			 final AddDrawActionHandler handler = new AddDrawActionHandler(model);
+			 AddDrawJDialog popup = new AddDrawJDialog(handler);
+			 
+			 popup.setVisible(true);
+			 
 
-			/*
-			 * final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null,
-			 * null); model.ajouterloto(toto);
-			 * 
-			 * log.debug("Clique sur le bouton ajouter");
-			 */
-
+			
+			 /*
 			final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null, null);
-			model.ajouterloto(toto);
+			model.ajouterLoto(toto);
 
 			log.debug("Clique sur le bouton ajouter");
-
+*/
 		}
 
 	}

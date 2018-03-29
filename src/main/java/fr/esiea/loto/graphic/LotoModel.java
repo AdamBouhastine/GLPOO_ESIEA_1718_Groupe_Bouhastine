@@ -79,7 +79,7 @@ public class LotoModel extends AbstractTableModel {
 		return csvDraw;
 	}
 
-	public void ajouterloto(final Loto tirage) {
+	public void ajouterLoto(final Loto tirage) {
 		log.debug("ajouterTirage");
 		draws.add(tirage);
 
