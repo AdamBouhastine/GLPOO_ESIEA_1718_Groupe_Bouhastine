@@ -178,7 +178,7 @@ public class LotoJFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			log.debug("clic clic");
+			log.debug("Test Ball");
 			String[] trancheNames = { "0-10", "11-20", "21-30", "31-40", "41-50" };
 			Map<String, Integer> map = new HashMap<String, Integer>();
 			for (String trancheName : trancheNames) {
