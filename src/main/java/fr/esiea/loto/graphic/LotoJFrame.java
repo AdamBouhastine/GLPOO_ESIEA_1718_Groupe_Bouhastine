@@ -33,7 +33,6 @@ import fr.esiea.loto.domain.Day;
 
 import fr.esiea.loto.domain.Loto;
 
-import fr.esiea.loto.domain.LotoDraw;
 import fr.esiea.loto.handler.AddDrawActionHandler;
 
 import java.util.Comparator;
@@ -49,6 +48,7 @@ public class LotoJFrame extends JFrame {
 	private JDialog balljdialog;
 
 	private JMenuItem menuSupprimer;
+	private JMenuItem menuFigureCreate;
 
 	public static long dateAsComparingLong(Object date) {
 		String[] tab = date.toString().split("/");
@@ -83,14 +83,21 @@ public class LotoJFrame extends JFrame {
 		menuEdition.add(menuAjouter);
 		menuSupprimer = new JMenuItem(new SupprimerLigneAction());
 		menuEdition.add(menuSupprimer);
-		activerOuDesactiverMenuEdition();
 
 		// Menu Graphe
 		final JMenu menuGraphe = new JMenu("Grahes");
 		menuBar.add(menuGraphe);
 		final JMenuItem menuBallsNumber = new JMenuItem(new Graphe());
 		menuGraphe.add(menuBallsNumber);
+		
+		//Menu Figure
+		final JMenu menuFigure = new JMenu("Figure");
+		menuBar.add(menuFigure);
+		menuFigureCreate = new JMenuItem(new Figure());
+		menuFigure.add(menuFigureCreate);
 
+
+		activerOuDesactiverMenuEdition();
 		// Ajout a la fenetre
 		setJMenuBar(menuBar);
 
@@ -122,9 +129,6 @@ public class LotoJFrame extends JFrame {
 
 	private class AjouterLigneAction extends AbstractAction {
 
-		/**
-		 * 
-		 */
 		private static final long serialVersionUID = 1L;
 
 		private AjouterLigneAction() {
@@ -141,15 +145,7 @@ public class LotoJFrame extends JFrame {
 			 AddDrawJDialog popup = new AddDrawJDialog(handler);
 			 
 			 popup.setVisible(true);
-			 
 
-			
-			 /*
-			final Loto toto = new LotoDraw("2018030", Day.JEUDI, "03/08/2018", 15, null, null);
-			model.ajouterLoto(toto);
-
-			log.debug("Clique sur le bouton ajouter");
-*/
 		}
 
 	}
@@ -238,6 +234,20 @@ public class LotoJFrame extends JFrame {
 		}
 	}
 
+	private class Figure extends AbstractAction{
+
+		private static final long serialVersionUID = 1L;
+		
+		private Figure() {
+			super("Create Figure");
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 	private class TableauListSelectionListener implements ListSelectionListener {
 
 		@Override
@@ -256,6 +266,7 @@ public class LotoJFrame extends JFrame {
 
 		final boolean isSelection = selection != null && selection.length != 0;
 		menuSupprimer.setEnabled(isSelection);
+		menuFigureCreate.setEnabled(isSelection);
 	}
 
 }

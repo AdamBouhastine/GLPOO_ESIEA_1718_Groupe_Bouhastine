@@ -18,7 +18,32 @@ public class DayRenderer extends DefaultTableCellRenderer{
 		Day day = (Day) value;
 		
 		setText(day.getLabel());
-		setBackground(day == Day.MARDI ? Color.GREEN : Color.RED);
+		switch(day) {
+		case LUNDI :
+			setBackground(Color.BLUE);
+			break;
+		case MARDI:
+			setBackground(Color.GREEN);
+			break;
+		case MERCREDI:
+			setBackground(Color.CYAN);
+			break;
+		case JEUDI:
+			setBackground(Color.MAGENTA);
+			break;
+		case VENDREDI:
+			setBackground(Color.PINK);
+			break;
+		case SAMEDI:
+			setBackground(Color.RED);
+			break;
+		case DIMANCHE:
+			setBackground(Color.YELLOW);
+			break;
+		default:
+			break;
+		}
+		//setBackground(day == Day.MARDI ? Color.GREEN : Color.RED);
 		return this;
 	}
 
