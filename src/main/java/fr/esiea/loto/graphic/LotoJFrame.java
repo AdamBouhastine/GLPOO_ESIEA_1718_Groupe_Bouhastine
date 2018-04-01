@@ -99,14 +99,8 @@ public class LotoJFrame extends JFrame {
 		menuFigureCreate = new JMenuItem(new Figure());
 		menuFigure.add(menuFigureCreate);
 
-<<<<<<< HEAD
-		// Menu Figure
-		final JMenu menuFigure = new JMenu("Figure");
-		menuBar.add(menuFigure);
-		menuFigureCreate = new JMenuItem(new Figure());
-		menuFigure.add(menuFigureCreate);
-=======
->>>>>>> refs/remotes/origin/master
+
+
 
 		activerOuDesactiverMenuEdition();
 		// Ajout a la fenetre
@@ -150,22 +144,16 @@ public class LotoJFrame extends JFrame {
 
 			log.debug("Click sur le bouton ajouter");
 
-<<<<<<< HEAD
+
 			final AddDrawActionHandler handler = new AddDrawActionHandler(model);
 			AddDrawJDialog popup = new AddDrawJDialog(handler);
-=======
+
 			
-			 final AddDrawActionHandler handler = new AddDrawActionHandler(model);
-			 AddDrawJDialog popup = new AddDrawJDialog(handler);
-			 
+		
 			 popup.setVisible(true);
->>>>>>> refs/remotes/origin/master
 
-<<<<<<< HEAD
-			popup.setVisible(true);
 
-=======
->>>>>>> refs/remotes/origin/master
+
 		}
 
 	}
@@ -255,7 +243,7 @@ public class LotoJFrame extends JFrame {
 		}
 	}
 
-<<<<<<< HEAD
+
 	private class Figure extends AbstractAction {
 
 		private static final long serialVersionUID = 1L;
@@ -284,22 +272,7 @@ public class LotoJFrame extends JFrame {
 
 	}
 
-=======
-	private class Figure extends AbstractAction{
 
-		private static final long serialVersionUID = 1L;
-		
-		private Figure() {
-			super("Create Figure");
-		}
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
->>>>>>> refs/remotes/origin/master
 	private class TableauListSelectionListener implements ListSelectionListener {
 
 		@Override
