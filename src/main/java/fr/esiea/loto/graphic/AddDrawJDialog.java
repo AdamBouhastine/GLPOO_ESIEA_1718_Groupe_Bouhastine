@@ -2,7 +2,6 @@ package fr.esiea.loto.graphic;
 
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.SOUTH;
-import static javax.swing.SwingConstants.RIGHT;
 import static javax.swing.SwingConstants.LEFT;
 
 import java.awt.Component;
