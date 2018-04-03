@@ -4,10 +4,14 @@ import java.awt.BorderLayout;
 import static java.awt.BorderLayout.CENTER;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -88,7 +92,7 @@ public class LotoJFrame extends JFrame {
 		menuEdition.add(menuSupprimer);
 
 		// Menu Graphe
-		final JMenu menuGraphe = new JMenu("Grahes");
+		final JMenu menuGraphe = new JMenu("Graphes");
 		menuBar.add(menuGraphe);
 		final JMenuItem menuBallsNumber = new JMenuItem(new Graphe());
 		menuGraphe.add(menuBallsNumber);
@@ -267,11 +271,10 @@ public class LotoJFrame extends JFrame {
 			
 			polygone.setPreferredSize(new Dimension(1200, 600));
 			GUIHelper.showOnFrame(polygone, "Tree",choseColorBackground);
+			
 
 		}
-
 	}
-
 
 	private class TableauListSelectionListener implements ListSelectionListener {
 
@@ -294,4 +297,4 @@ public class LotoJFrame extends JFrame {
 		menuFigureCreate.setEnabled(isSelection);
 	}
 
-}
+	}

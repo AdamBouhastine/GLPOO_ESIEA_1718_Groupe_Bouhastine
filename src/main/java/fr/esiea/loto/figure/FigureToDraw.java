@@ -29,6 +29,8 @@ public class FigureToDraw extends JPanel {
 		drawTree(g, x2, y2, angle - 20, iter - 1);
 		drawTree(g, x2, y2, angle + 20, iter - 1);
 	}
+	
+
 
 	public void paint(Graphics g) {
 
