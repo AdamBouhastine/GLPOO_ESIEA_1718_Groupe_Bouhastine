@@ -20,14 +20,14 @@ public class FigureToDraw extends JPanel {
 		this.balls = balls;
 	}
 
-	private void drawTree(Graphics g, int x1, int y1, double angle, int iter) {
-		if (iter == 0)
+	private void drawTree(Graphics g, int x1, int y1, double angle, int iteration) {
+		if (iteration == 0)
 			return;
-		int x2 = x1 + (int) (Math.cos(Math.toRadians(angle)) * iter * 10.0);
-		int y2 = y1 + (int) (Math.sin(Math.toRadians(angle)) * iter * 10.0);
+		int x2 = x1 + (int) (Math.cos(Math.toRadians(angle)) * iteration * 10.0);
+		int y2 = y1 + (int) (Math.sin(Math.toRadians(angle)) * iteration * 10.0);
 		g.drawLine(x1, y1, x2, y2);
-		drawTree(g, x2, y2, angle - 20, iter - 1);
-		drawTree(g, x2, y2, angle + 20, iter - 1);
+		drawTree(g, x2, y2, angle - 20, iteration - 1);
+		drawTree(g, x2, y2, angle + 20, iteration - 1);
 	}
 	
 

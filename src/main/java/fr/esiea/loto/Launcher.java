@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 import org.apache.log4j.Logger;
 
-import fr.esiea.loto.graphic.LotoJFrame;
+import fr.esiea.loto.home.HomeJFrame;
 
 
 
@@ -16,9 +16,9 @@ public class Launcher {
 		
 	log.debug("Welcome to the Real World");
 	
+	final JFrame homeJFrame = new HomeJFrame();
+	homeJFrame.setVisible(true);
 	
-	final JFrame lotoJFrame = new LotoJFrame();
-	lotoJFrame.setVisible(true);
 	
 	
 	}

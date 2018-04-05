@@ -4,14 +4,10 @@ import java.awt.BorderLayout;
 import static java.awt.BorderLayout.CENTER;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -37,9 +33,7 @@ import fr.esiea.loto.domain.Day;
 
 import fr.esiea.loto.domain.Loto;
 import fr.esiea.loto.figure.FigureToDraw;
-import fr.esiea.loto.figure.GUIHelper;
-import fr.esiea.loto.graphic.*;
-
+import fr.esiea.loto.figure.FigureJFrame;
 import fr.esiea.loto.handler.AddDrawActionHandler;
 
 import java.util.Comparator;
@@ -96,15 +90,12 @@ public class LotoJFrame extends JFrame {
 		menuBar.add(menuGraphe);
 		final JMenuItem menuBallsNumber = new JMenuItem(new Graphe());
 		menuGraphe.add(menuBallsNumber);
-		
-		//Menu Figure
+
+		// Menu Figure
 		final JMenu menuFigure = new JMenu("Figure");
 		menuBar.add(menuFigure);
 		menuFigureCreate = new JMenuItem(new Figure());
 		menuFigure.add(menuFigureCreate);
-
-
-
 
 		activerOuDesactiverMenuEdition();
 		// Ajout a la fenetre
@@ -148,15 +139,10 @@ public class LotoJFrame extends JFrame {
 
 			log.debug("Click sur le bouton ajouter");
 
-
 			final AddDrawActionHandler handler = new AddDrawActionHandler(model);
 			AddDrawJDialog popup = new AddDrawJDialog(handler);
 
-			
-		
-			 popup.setVisible(true);
-
-
+			popup.setVisible(true);
 
 		}
 
@@ -247,7 +233,6 @@ public class LotoJFrame extends JFrame {
 		}
 	}
 
-
 	private class Figure extends AbstractAction {
 
 		private static final long serialVersionUID = 1L;
@@ -260,7 +245,9 @@ public class LotoJFrame extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 
 			final int selection = table.getSelectedRow();
+
 			List<Integer> balls = (List<Integer>) table.getValueAt(selection, 4);
+
 			List<Integer> stars = (List<Integer>) table.getValueAt(selection, 5);
 			log.debug(balls);
 			log.debug(stars);
@@ -268,10 +255,9 @@ public class LotoJFrame extends JFrame {
 			FigureToDraw polygone = new FigureToDraw(balls, stars);
 			int choseColorBackground = balls.get(0) % 13;
 			log.debug(choseColorBackground);
-			
+
 			polygone.setPreferredSize(new Dimension(1200, 600));
-			GUIHelper.showOnFrame(polygone, "Tree",choseColorBackground);
-			
+			FigureJFrame.showOnFrame(polygone, "Tree", choseColorBackground);
 
 		}
 	}
@@ -297,4 +283,4 @@ public class LotoJFrame extends JFrame {
 		menuFigureCreate.setEnabled(isSelection);
 	}
 
-	}
+}

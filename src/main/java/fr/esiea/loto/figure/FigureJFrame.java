@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 
 
-public class GUIHelper {
+public class FigureJFrame {
 	
 	public static JFrame frame;
 	public static void showOnFrame(JComponent component, String frameName, int choseColorBackground) {
@@ -98,15 +98,16 @@ public class GUIHelper {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
-			File f = new File("images/figure.png");
-			f.getParentFile().mkdirs();
+			
+			File file = new File("images/figure.png");
+			file.getParentFile().mkdirs();
 			BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(), BufferedImage.TYPE_INT_ARGB);
-			Graphics2D g2 = image.createGraphics();
-			frame.paint(g2);
-			g2.dispose();
+			Graphics2D graphics = image.createGraphics();
+			frame.paint(graphics);
+			graphics.dispose();
 
 			try {
-				ImageIO.write(image, "PNG", f);
+				ImageIO.write(image, "PNG", file);
 			} catch (Exception e) {
 			}
 			
