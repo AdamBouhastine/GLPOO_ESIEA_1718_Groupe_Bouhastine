@@ -43,7 +43,7 @@ public class AddDrawJDialog extends JDialog {
 	private JPanel formPane = new JPanel();
 
 	private JTextField year = new JTextField(15);
-	private JComboBox day = new JComboBox();
+	private JComboBox<Day> day = new JComboBox<Day>();
 	private JTextField date = new JTextField(15);
 	private JTextField nbOfDraw = new JTextField(15);
 	private JTextField balls = new JTextField(15);
