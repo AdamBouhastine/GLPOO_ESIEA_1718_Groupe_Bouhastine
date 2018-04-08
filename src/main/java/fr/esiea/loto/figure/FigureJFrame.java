@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 public class FigureJFrame {
 	
 	public static JFrame frame;
+	public static JPanel panel;
 	public static void showOnFrame(JComponent component, String frameName, int choseColorBackground) {
 		 frame = new JFrame(frameName);
 		WindowAdapter wa = new WindowAdapter() {
@@ -30,51 +31,56 @@ public class FigureJFrame {
 			}
 		};
 
-		
+		panel = new JPanel();
 		frame.addWindowListener(wa);
-		frame.getContentPane().add(component);
+		panel.add(component);
+		frame.getContentPane().add(panel);
 		frame.isResizable();
+		
+		
 		final JPanel buttonBar = new JPanel();
 		frame.getContentPane().add(buttonBar, BorderLayout.SOUTH);
+		
+		
 		switch (choseColorBackground) {
 		case 0:
-			buttonBar.setBackground(Color.BLACK);
+			panel.setBackground(Color.BLACK);
 			break;
 		case 1:
-			buttonBar.setBackground(Color.BLUE);
+			panel.setBackground(Color.BLUE);
 			break;
 		case 2:
-			buttonBar.setBackground(Color.CYAN);
+			panel.setBackground(Color.CYAN);
 			break;
 		case 3:
-			buttonBar.setBackground(Color.DARK_GRAY);
+			panel.setBackground(Color.DARK_GRAY);
 			break;
 		case 4:
-			buttonBar.setBackground(Color.GRAY);
+			panel.setBackground(Color.GRAY);
 			break;
 		case 5:
-			buttonBar.setBackground(Color.GREEN);
+			panel.setBackground(Color.GREEN);
 			break;
 		case 6:
-			buttonBar.setBackground(Color.LIGHT_GRAY);
+			panel.setBackground(Color.LIGHT_GRAY);
 			break;
 		case 7:
-			buttonBar.setBackground(Color.MAGENTA);
+			panel.setBackground(Color.MAGENTA);
 			break;
 		case 8:
-			buttonBar.setBackground(Color.ORANGE);
+			panel.setBackground(Color.ORANGE);
 			break;
 		case 9:
-			buttonBar.setBackground(Color.PINK);
+			panel.setBackground(Color.PINK);
 			break;
 		case 10:
-			buttonBar.setBackground(Color.RED);
+			panel.setBackground(Color.RED);
 			break;
 		case 11:
-			buttonBar.setBackground(Color.WHITE);
+			panel.setBackground(Color.WHITE);
 			break;
 		case 12:
-			buttonBar.setBackground(Color.YELLOW);
+			panel.setBackground(Color.YELLOW);
 			break;
 
 		}
@@ -101,9 +107,9 @@ public class FigureJFrame {
 			
 			File file = new File("images/figure.png");
 			file.getParentFile().mkdirs();
-			BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(), BufferedImage.TYPE_INT_ARGB);
+			BufferedImage image = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
 			Graphics2D graphics = image.createGraphics();
-			frame.paint(graphics);
+			panel.paint(graphics);
 			graphics.dispose();
 
 			try {

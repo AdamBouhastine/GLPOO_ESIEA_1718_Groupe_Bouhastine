@@ -60,7 +60,7 @@ public class LotoJFrame extends JFrame {
 	}
 
 	public LotoJFrame() {
-		setTitle("Loto Easy bae");
+		setTitle("Eurodroo");
 		setPreferredSize(new Dimension(900, 600));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
