@@ -112,8 +112,8 @@ public class LotoJFrame extends JFrame {
 		table.setRowSorter(sorter);
 
 		table.setBackground(Color.lightGray);
-		table.setGridColor(Color.red);
-		table.setSelectionBackground(Color.orange);
+		table.setGridColor(Color.magenta);
+		table.setSelectionBackground(Color.white);
 
 		final JScrollPane scroll = new JScrollPane(table);
 		getContentPane().add(scroll, BorderLayout.CENTER);
@@ -280,7 +280,9 @@ public class LotoJFrame extends JFrame {
 
 		final boolean isSelection = selection != null && selection.length != 0;
 		menuSupprimer.setEnabled(isSelection);
-		menuFigureCreate.setEnabled(isSelection);
+		
+		final boolean isSelectionAlone = selection != null && selection.length ==1;
+		menuFigureCreate.setEnabled(isSelectionAlone);
 	}
 
 }
