@@ -4,6 +4,7 @@
       "round":1,
       "name":"Australian Grand Prix",
       "start":"25-03-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
