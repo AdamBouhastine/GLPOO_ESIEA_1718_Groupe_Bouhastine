@@ -3,147 +3,147 @@
 		"year":2018,
 		"round":1,
 		"name":"Australian Grand Prix",
-		"start":"25-03-2018"
+		"start":"25-03-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":2,
 		"name":"Bahrein Grand Prix",
-		"start":"8-04-2018"
+		"start":"8-04-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":3,
 		"name":"Chinese Grand Prix",
-		"start":"15-04-2018"
+		"start":"15-04-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":4,
 		"name":"Azerbaijan Grand Prix",
-		"start":"29-04-2018"
+		"start":"29-04-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":5,
 		"name":"Spanish Grand Prix",
-		"start":"13-05-2018"
+		"start":"13-05-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":6,
 		"name":"Monaco Grand Prix",
-		"start":"27-05-2018"
+		"start":"27-05-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":7,
 		"name":"Canadian Grand Prix",
-		"start":"10-06-2018"
+		"start":"10-06-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":8,
 		"name":"France Grand Prix",
-		"start":"24-06-2018"
+		"start":"24-06-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":9,
 		"name":"Austrian Grand Prix",
-		"start":"1-07-2018"
+		"start":"1-07-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":10,
 		"name":"British Grand Prix",
-		"start":"8-07-2018"
+		"start":"8-07-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":11,
 		"name":"Germany Grand Prix",
-		"start":"22-07-2018"
+		"start":"22-07-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":12,
 		"name":"Hungarian Grand Prix",
-		"start":"29-07-2018"
+		"start":"29-07-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":13,
 		"name":"Belgian Grand Prix",
-		"start":"26-08-2018"
+		"start":"26-08-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":14,
 		"name":"Italian Grand Prix",
-		"start":"2-09-2018"
+		"start":"2-09-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":15,
 		"name":"Singapore Grand Prix",
-		"start":"16-09-2018"
+		"start":"16-09-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":16,
 		"name":"Russian Grand Prix",
-		"start":"30-09-2018"
+		"start":"30-09-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":17,
 		"name":"Japan Grand Prix",
-		"start":"7-10-2018"
+		"start":"7-10-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":18,
 		"name":"United States Grand Prix",
-		"start":"21-10-2018"
+		"start":"21-10-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":19,
 		"name":"Mexican Grand Prix",
-		"start":"28-10-2018"
+		"start":"28-10-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":20,
 		"name":"Brazilian Grand Prix",
-		"start":"13-11-2018"
+		"start":"13-11-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	},
 	{  
 		"year":2018,
 		"round":21,
 		"name":"Abu Dhabi Grand Prix",
-		"start":"25-11-2018"
+		"start":"25-11-2018",
 		"background":"http://flags.fmcdn.net/data/flags/w580/bh.png"
 	}
 ]
