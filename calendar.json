@@ -11,48 +11,56 @@
       "round":2,
       "name":"Bahrein Grand Prix",
       "start":"8-04-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":3,
       "name":"Chinese Grand Prix",
       "start":"15-04-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":4,
       "name":"Azerbaijan Grand Prix",
       "start":"29-04-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":5,
       "name":"Spanish Grand Prix",
       "start":"13-05-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":6,
       "name":"Monaco Grand Prix",
       "start":"27-05-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":7,
       "name":"Canadian Grand Prix",
       "start":"10-06-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":8,
       "name":"France Grand Prix",
       "start":"24-06-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
       "round":9,
       "name":"Austrian Grand Prix",
       "start":"1-07-2018"
+	  "background":"@drawable/au"
    },
    {  
       "year":2018,
